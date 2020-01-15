@@ -1,0 +1,1 @@
+g++ unit.h exception.h tree.h main.cpp -o tree

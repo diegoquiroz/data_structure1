@@ -1,0 +1,1 @@
+g++ unit.h exception.h stacksandqueues.h main.cpp -o stacksandqueues
