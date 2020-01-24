@@ -7,7 +7,15 @@
 #define FUNCTIONS_H_
 
 unsigned long fact(int n) {
-	return 0;
+
+  if(n < 0){
+    return 0;
+  }
+
+	int result = 1;
+  while()
+
+  return result;
 }
 
 bool isPrime(int n) {
