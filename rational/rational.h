@@ -13,12 +13,15 @@
 #include <sstream>
 
 class Rational {
+
+// "Private" is for encapsulation
 private:
 	int numerator;
 	int denominator;
 
 	void normalize();
 
+// "Public" is for inheritance
 public:
 	Rational();
 	Rational(int);
@@ -35,11 +38,21 @@ public:
 	operator double () const;
 };
 
-Rational::Rational() {}
+Rational::Rational() {
+	numerator = 0;
+	denominator = 1;
+}
 
-Rational::Rational(int num){}
+Rational::Rational(int num){
+	numerator = num;
+	denominator = 1;
+}
 
 Rational::Rational(int num, int dem){
+	numerator = num;
+	denominator = num;
+
+	normalize();
 }
 
 int Rational::getNumerator() const {
@@ -79,6 +92,10 @@ int gcd(int a, int b) {
 }
 
 void Rational::normalize() {
+	int gcd1 = gcd(numerator, denominator);
+
+	numerator = numerator/gcd;
+	denominator = denominator/gcd;
 }
 
 Rational operator+ (const Rational &left, const Rational &right) {
